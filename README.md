@@ -1,8 +1,9 @@
 # quantization
 
-Bit-level weight quantization implemented from scratch. No bitsandbytes. No GGUF. Pure NumPy (Python) and zero-dependency TypeScript.
+> **8-bit: SNR = 45.1 dB (4× smaller). 4-bit: SNR = 20.6 dB (8× smaller).**  
+> This is the arithmetic that lets a 70B model run on a laptop — absmax, zero-point, block quant in pure NumPy.
 
-Quantization is what turns a 70B parameter model from "needs 8× A100s" into "runs on a laptop." This repo shows the exact arithmetic — including where the precision loss happens and how to measure it.
+Bit-level weight quantization from scratch — no bitsandbytes, no GGUF. See exactly where the precision loss happens and how to measure it.
 
 ---
 
@@ -107,3 +108,9 @@ quantization/
 - **GPTQ** (Frantar et al., 2022) — zero-point 4-bit with second-order weight update
 - **QLoRA** (Dettmers et al., 2023) — NF4 + double quantization for fine-tuning
 - **GGUF / llama.cpp** — block quantization making local LLM inference practical
+
+---
+
+## License
+
+MIT
